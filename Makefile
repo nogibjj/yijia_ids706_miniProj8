@@ -1,17 +1,17 @@
 # Rust Commands
-format:
+format-rust:
 	cargo fmt --quiet
 
-lint:
+lint-rust:
 	cargo clippy --quiet
 
-test:
+test-rust:
 	cargo test --quiet
 
-build:
+build-rust:
 	cargo build --release
 
-run: 
+run-rust: 
 	cargo run
 
 perf-test-rust:

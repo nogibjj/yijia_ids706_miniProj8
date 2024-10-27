@@ -21,7 +21,7 @@ jobs:
         override: true
 
     - name: Build
-      run: make build 
+      run: make build-rust
       
     - name: Upload binary as an artifact
       uses: actions/upload-artifact@v4
@@ -30,13 +30,13 @@ jobs:
         path: target/release/yijia_ids706_mini_proj8
 
     - name: Format
-      run: make format
+      run: make format-rust
 
     - name: Lint
-      run: make lint
+      run: make lint-rust
 
     - name: Run tests
-      run: make test
+      run: make test-rust
 
     - name: Run Rust performance tests
       run: make perf-test-rust

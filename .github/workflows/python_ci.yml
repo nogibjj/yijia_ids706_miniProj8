@@ -16,16 +16,16 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Setup
-        run: make install
+        run: make install-python
 
       - name: Format
-        run: make format
+        run: make format-python
 
       - name: Lint
-        run: make lint
+        run: make lint-python
 
       - name: Test
-        run: make test
+        run: make test-python
 
       - name: Run Python performance tests
         run: make perf-test-python
