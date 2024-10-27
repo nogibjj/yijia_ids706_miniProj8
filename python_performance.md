@@ -2,15 +2,16 @@
 
 ### Mean Calculation Performance
 
-- Time taken: 0.047291 seconds
-- Initial memory usage: 382.72 MB
-- Final memory usage: 405.97 MB
-- Memory consumed: 23.25 MB
+- Time taken: 0.052973 seconds
+- Initial memory usage: 346.00 MB
+- Final memory usage: 405.67 MB
+- Memory consumed: 59.67 MB
 
 ### Median Calculation Performance
 
-- Time taken: 2.573528 seconds
-- Initial memory usage: 393.06 MB
-- Final memory usage: 482.34 MB
-- Memory consumed: 89.28 MB
+- Time taken: 2.592862 seconds
+- Initial memory usage: 353.03 MB
+- Final memory usage: 484.31 MB
+- Memory consumed: 131.28 MB
+
 

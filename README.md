@@ -1,54 +1,52 @@
-# yijia_ids706_miniProj7
+# yijia_ids706_miniProj8
 
-# Rust Template
+## Overview
+This project provides both Rust and Python implementations of a tool for calculating statistical measures (mean and median) on large datasets.
 
-This project have  with Rust version and python version code that calculates the mean and median of a list of numbers. And test to compare the time complecity and space usage performace of two language 
 ## CI/CD Badge
+[![Python CI](https://github.com/nogibjj/yijia_ids706_miniProj8/actions/workflows/python_ci.yml/badge.svg)](https://github.com/nogibjj/yijia_ids706_miniProj8/actions/workflows/python_ci.yml)
 
+[![Rust CI](https://github.com/nogibjj/yijia_ids706_miniProj8/actions/workflows/rust_ci.yml/badge.svg)](https://github.com/nogibjj/yijia_ids706_miniProj8/actions/workflows/rust_ci.yml)
 
 ## File Structure
 
-- **`.devcontainer/`**: Contains the development container configuration (`devcontainer.json` and a Dockerfile) to ensure a consistent development environment. From (https://github.com/johncoogan53/Rust-Template/blob/main/.devcontainer/Dockerfile)
-- **`Makefile`**: Provides commands for building, formatting, linting and testing the project.
-- **`.github/workflows/`**: Contains the CI/CD pipeline configuration (ci.yml) that triggers on pushes and pull requests, ensuring continuous testing and validation.
-- **`src/`**: Contains the source code for , including the lib.rs and stats.py.
-- **`tests/`**: Contains the test cases for the statistical functions, ensuring that the tool works correctly.
-
+- **`.devcontainer/`**: Contains the development container configuration (`devcontainer.json` and a Dockerfile) to ensure a consistent development environment.
+- **`.github/workflows/`**: GitHub Actions CI/CD pipelines (python_ci.yml and rust_ci.yml) for Rust and Python implementations.
+- **`Makefile`**: Contains commands to build, format, lint, test, and measure project performance.
+- **`src/`**: Contains the source code for the Rust version (`lib.rs`) and Python version (`stats.py`).
+- **`tests/`**: Contains both functional and performance tests for Rust and Python versions.
+- **`python_performance.md` and `rust_performance.md`**: Auto-generated performance reports for Python and Rust versions.
 
 ## Installation
 
 ### 1. Prerequisites
-- Option 1: Run Locally with Rust
-    - Install Rust and Cargo.
 
-- Option 2: Download Prebuilt Binary (No Rust Installation Required)
-    - The binary is automatically built during the CI/CD process and can be downloaded directly from the GitHub Actions Artifacts section.
-    - No need to install Rust on your local machine.
-      
-### 2. Download Prebuilt Binary (No Rust Required)
-Download the prebuilt binary artifact and ensure using a Linux environment (e.g., GitHub Codespaces, a Linux VM, or a Linux machine) 
+#### Option 1: Local Installation with Rust and Python
+- **Rust**: Ensure Rust and Cargo are installed.
+- **Python**: Install Python and the required dependencies from `requirements.txt`.
 
-Here’s how to get the binary:
-1. Go to the Actions tab in the repository.
-2. Select the latest workflow run.
-3. Scroll down to Artifacts and download the yijia_ids706_mini_proj7.
-4. Move the binary to a Linux environment where you want to run the tool (e.g., GitHub Codespaces or a Linux machine).
 
-**Usage of Binary:** 
+#### Option 2: Download Prebuilt Binary (No Rust Installation Required)
+Download the prebuilt binary from the GitHub Actions Artifacts section, and run it in a Linux environment (e.g., GitHub Codespaces, a Linux VM, or any Linux machine).
+
+### Running the Binary
+1. Go to the **Actions** tab on GitHub and download the prebuilt binary.
+2. Transfer the binary to a Linux environment (e.g., GitHub Codespaces, Linux VM, or any Linux machine).
+3. Run the binary:
+    ```sh
+    ./yijia_ids706_mini_proj8
+    ```
+   This will prompt you to enter a list of numbers and output the calculated mean and median.
+
+## Running Locally with Rust
+
+1. Clone the Repository
 ```sh
-./yijia_ids706_mini_proj7
-```
-It will prompt you to enter a list of numbers (separated by spaces) and will return the mean and median.
-
-### 3. Running Locally with Rust Installed
-### Steps
-1. Clone the repository:
-
-```sh
-git clone git@github.com:nogibjj/yijia_ids706_miniProj7.git
+git clone git@github.com:nogibjj/yijia_ids706_miniProj8.git
+cd yijia_ids706_miniProj8
 ```
 
-2. (Optional): Open the repository in Visual Studio Code and reopen it in a container using the .devcontainer configuration to ensure a consistent development environment.
+2. (Optional): Open the repository in Visual Studio Code and reopen it in a container using .devcontainer configuration files.
 
 3. Build the project:
 ```sh
@@ -61,20 +59,51 @@ make run
 ```
 The tool will prompt you to enter a list of numbers (separated by spaces) and will return the mean and median of those numbers.
 
+
+
 ## Available Commands
-Here is a list of available commands using the Makefile:
+
+### Rust Commands
 ```sh
-make format  # Formats Rust files using `cargo fmt`.
-make lint    # Lints Rust files using `cargo clippy`.
-make test    # Runs tests using `cargo test`.
-make build   # Builds the project in release mode using `cargo build --release`.
-make run     # Runs the tool in the terminal.
+make format-rust          # Formats Rust files using `cargo fmt`.
+make lint-rust            # Lints Rust files using `cargo clippy`.
+make test-rust            # Runs tests using `cargo test`.
+make build-rust           # Builds the project in release mode using `cargo build --release`.
+make run-rust             # Runs the Rust version of the tool.
+make perf-test-rust       # Runs Rust performance tests and logs results.
 ```
 
-## CI/CD Pipeline
-This project uses GitHub Actions for continuous integration. The pipeline automatically:
+### Python Commands
+```sh
+make install-python       # Installs Python dependencies.
+make format-python        # Formats Python files using `black`.
+make lint-python          # Lints Python files using `ruff`.
+make test-python          # Runs Python tests with coverage reporting.
+make perf-test-python     # Runs Python performance tests.
+```
 
-1. Checks formatting using cargo fmt.
-2. Lints the code with cargo clippy.
-3. Runs tests using cargo test.
-4. Builds the project in release mode using cargo build --release.
+
+## Performance Analysis
+
+Performance comparisons between the Rust and Python implementations are automatically logged in `rust_performance.md` and `python_performance.md`. These can be generated by running:
+
+```sh
+make perf-test-python  # For Python performance report
+make perf-test-rust    # For Rust performance report
+```
+
+**Python Performance Report:**
+    - Mean Calculation: Time taken 0.052973 seconds, Memory consumed: 59.67 MB.
+    - Median Calculation: Time taken 2.592862 seconds, Memory consumed: 131.28 MB.
+
+**Rust Performance Report:**
+    - Mean Calculation: Time taken 17.665542 ms, Memory consumed: 0 KB.
+    - Median Calculation: Time taken 10.801875 ms, Memory consumed: 0 KB.
+
+### Analysis
+The performance reports show that the Rust implementation is significantly faster and more memory-efficient compared to the Python version, especially on large datasets. Rust’s low-level memory management and its compiled nature give it an advantage in both execution time and memory usage, making it highly suitable for high-performance applications.
+
+## CI/CD Pipeline
+This project uses GitHub Actions for automated testing and deployment, with separate workflows for Rust and Python. 
+The Rust CI workflow builds the project in release mode, creates an artifact of the binary, checks code formatting, lints the code, and runs unit tests. 
+The Python CI workflow installs Python dependencies, formats the code, lints for code quality, and runs unit tests with coverage to ensure code reliability.

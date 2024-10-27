@@ -1,15 +1,35 @@
 {
-    "name": "Rust and AWS CLI",
+    "name": "Rust and Python",
     "build": {
-        "dockerfile": "Dockerfile"
+        "dockerfile": "Dockerfile",
+        "args": {
+            "VARIANT": "bullseye"
+        }
     },
+    "runArgs": [
+        "--cap-add=SYS_PTRACE",
+        "--security-opt",
+        "seccomp=unconfined"
+    ],
     "customizations": {
         "vscode": {
+            "settings": { 
+                "lldb.executable": "/usr/bin/lldb",
+                "files.watcherExclude": {
+                    "**/target/**": true
+                },
+                "rust-analyzer.checkOnSave.command": "clippy"
+            },
             "extensions": [
-                "rust-lang.rust-analyzer", // Updated to use rust-analyzer
-                "ms-azuretools.vscode-docker" // Added Docker extension
+                "vadimcn.vscode-lldb",          // Debugger
+                "mutantdino.resourcemonitor",    // Resource Monitor
+                "rust-lang.rust-analyzer",       // Rust language support
+                "tamasfe.even-better-toml",      // TOML support
+                "serayuzgur.crates",             // Crates.io support
+                "ms-python.python",              // Python support
+                "ms-azuretools.vscode-docker"    // Docker support
             ]
         }
     },
-    "postCreateCommand": "rustup update && rustup component add clippy && rustup component add rustfmt"
+    "remoteUser": "vscode"
 }
