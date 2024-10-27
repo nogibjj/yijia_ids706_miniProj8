@@ -1,5 +1,5 @@
 use std::io::{self};
-use yijia_ids706_mini_proj7::stats;
+use yijia_ids706_mini_proj8::stats;
 
 fn main() {
     println!("Enter a list of numbers separated by spaces:");

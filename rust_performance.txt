@@ -1,0 +1,11 @@
+
+running 2 tests
+Rust - Time taken for median calculation: 13.358625ms
+Rust - Memory usage for median calculation: 0 KB
+test test_median_performance ... ok
+Rust - Time taken for mean calculation: 19.602125ms
+Rust - Memory usage for mean calculation: 0 KB
+test test_mean_performance ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.19s
+

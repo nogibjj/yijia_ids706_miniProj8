@@ -1,0 +1,8 @@
+Time taken for mean calculation: 0.063968 seconds
+Initial memory usage: 389.38 MB
+Final memory usage: 405.70 MB
+Memory consumed by mean calculation: 16.33 MB
+Time taken for median calculation: 2.611865 seconds
+Initial memory usage: 398.25 MB
+Final memory usage: 484.38 MB
+Memory consumed by median calculation: 86.12 MB

@@ -4,3 +4,5 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+rss = "1.0"
+sysinfo = "0.26"

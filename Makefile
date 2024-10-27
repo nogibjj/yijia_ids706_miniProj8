@@ -15,8 +15,9 @@ run-rust:
 	cargo run
 
 perf-test-rust:
-	cargo run --release --bin performance_tests > rust_performance.txt
-
+	# cargo run --release --bin test_performance > rust_performance.txt
+	cargo test --release --test test_performance -- --nocapture > rust_performance.txt
+	cargo test --release --test test_performance -- --nocapture > rust_performance.txt
 
 # Python Commands
 install-python:
