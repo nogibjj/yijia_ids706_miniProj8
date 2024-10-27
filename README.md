@@ -2,17 +2,16 @@
 
 # Rust Template
 
-This project is a simple statistical tool built with Rust that calculates the mean and median of a list of numbers. The tool is packaged with a Makefile for easier management of tasks, including building, testing, linting, and formatting. CI/CD is implemented via GitHub Actions.
-
+This project have  with Rust version and python version code that calculates the mean and median of a list of numbers. And test to compare the time complecity and space usage performace of two language 
 ## CI/CD Badge
-[![Rust CI](https://github.com/nogibjj/yijia_ids706_miniProj7/actions/workflows/ci.yml/badge.svg)](https://github.com/nogibjj/yijia_ids706_miniProj7/actions/workflows/ci.yml)
+
 
 ## File Structure
 
 - **`.devcontainer/`**: Contains the development container configuration (`devcontainer.json` and a Dockerfile) to ensure a consistent development environment. From (https://github.com/johncoogan53/Rust-Template/blob/main/.devcontainer/Dockerfile)
 - **`Makefile`**: Provides commands for building, formatting, linting and testing the project.
 - **`.github/workflows/`**: Contains the CI/CD pipeline configuration (ci.yml) that triggers on pushes and pull requests, ensuring continuous testing and validation.
-- **`src/`**: Contains the source code for the Rust tool, including the main.rs and lib.rs files.
+- **`src/`**: Contains the source code for , including the lib.rs and stats.py.
 - **`tests/`**: Contains the test cases for the statistical functions, ensuring that the tool works correctly.
 
 

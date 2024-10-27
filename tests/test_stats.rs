@@ -1,6 +1,6 @@
 #[cfg(test)]
 mod tests {
-    use yijia_ids706_mini_proj7::stats::{mean, median};
+    use yijia_ids706_mini_proj8::stats::{mean, median};
 
     #[test]
     fn test_mean() {
