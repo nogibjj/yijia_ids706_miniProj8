@@ -27,13 +27,22 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: rust_stats_tool_binary
-        path: target/release/yijia_ids706_mini_proj7  
+        path: target/release/yijia_ids706_mini_proj8
 
-    - name: Check formatting
+    - name: Format
       run: make format
 
-    - name: Lint with Clippy
+    - name: Lint
       run: make lint
 
     - name: Run tests
       run: make test
+
+    - name: Run Rust performance tests
+      run: make perf-test-rust
+
+    - name: Upload Rust performance result
+      uses: actions/upload-artifact@v3
+      with:
+        name: rust_performance
+        path: rust_performance.txt

@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+
+jobs:
+  test-python:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup
+        run: make install
+
+      - name: Format
+        run: make format
+
+      - name: Lint
+        run: make lint
+
+      - name: Test
+        run: make test
+
+      - name: Run Python performance tests
+        run: make perf-test-python
+
+      - name: Upload Python performance result
+        uses: actions/upload-artifact@v3
+        with:
+          name: python_performance
+          path: python_performance.txt
