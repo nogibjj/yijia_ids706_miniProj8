@@ -1,7 +1,7 @@
 import time
 import random
 import psutil
-from stats import mean, median  # Ensure this imports correctly from your project
+from stats import mean, median
 
 process = psutil.Process()
 

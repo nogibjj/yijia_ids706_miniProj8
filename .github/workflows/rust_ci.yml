@@ -42,7 +42,7 @@ jobs:
       run: make perf-test-rust
 
     - name: Upload Rust performance result
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: rust_performance
         path: rust_performance.txt
