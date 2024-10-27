@@ -15,9 +15,9 @@ run-rust:
 	cargo run
 
 perf-test-rust:
-	# cargo run --release --bin test_performance > rust_performance.txt
 	cargo test --release --test test_performance -- --nocapture > rust_performance.txt
-	cargo test --release --test test_performance -- --nocapture > rust_performance.txt
+	echo "# Rust Performance Report" > rust_performance.md
+	cat rust_performance.txt >> rust_performance.md
 
 # Python Commands
 install-python:
@@ -37,14 +37,6 @@ test-python:
 
 perf-test-python:
 	PYTHONPATH=src python tests/test_performance.py > python_performance.txt
+	echo "# Python Performance Report" > python_performance.md
+	cat python_performance.txt >> python_performance.md
 
-
-
-
-# Generate Performance Report
-generate-report:
-	echo "# Performance Comparison Report" > performance_report.md
-	echo "\n## Rust Performance" >> performance_report.md
-	cat rust_performance.txt >> performance_report.md
-	echo "\n## Python Performance" >> performance_report.md
-	cat python_performance.txt >> performance_report.md
