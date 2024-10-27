@@ -34,9 +34,9 @@ lint-python:
 test-python:
 	python -m pytest -vv --cov=src --cov=tests tests/test_stats.py
 
-
 perf-test-python:
-	python tests/test_performance.py > python_performance.txt
+	PYTHONPATH=src python tests/test_performance.py > python_performance.txt
+
 
 
 
